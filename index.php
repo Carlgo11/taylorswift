@@ -1,15 +1,6 @@
 <?php
 
-function getSongs() {
-    $dir = "songs/";
-    $files = scandir($dir, 1);
-    $length = count($files) - 2;
-
-    return $files[rand(0, $length)];
-}
-
-function getBackground() {
-    $dir = "images/";
+function getFiles($dir) {
     $files = scandir($dir, 1);
     $length = count($files) - 2;
 
@@ -22,9 +13,9 @@ function getBackground() {
         <meta charset="UTF-8">
         <title>Taylor Swift</title>
     </head>
-    <body style="background-image: url('images/<?php echo getBackground(); ?>')">
+    <body style="background-image: url('images/<?php echo getFiles("images"); ?>')">
         <audio autoplay="">
-            <source src="songs/<?php echo getSongs(); ?>">
+            <source src="songs/<?php echo getFiles("songs"); ?>">
         </audio>
     </body>
 </html>
