@@ -2,7 +2,7 @@
 
 function getFiles($dir) {
     $files = scandir($dir, 1);
-    $length = count($files) - 2;
+    $length = count($files) - 3;
 
     return $files[rand(0, $length)];
 }
@@ -13,7 +13,7 @@ function getFiles($dir) {
         <meta charset="UTF-8">
         <title>Taylor Swift</title>
     </head>
-    <body style="background-image: url('images/<?php echo getFiles("images"); ?>')">
+    <body style="background-image: url('images/<?php echo getFiles("images"); ?>'); background-repeat: no-repeat; background-size: cover">
         <audio autoplay="">
             <source src="songs/<?php echo getFiles("songs"); ?>">
         </audio>
