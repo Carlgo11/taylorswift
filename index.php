@@ -15,8 +15,18 @@ function getFiles($dir) {
         <title>Taylor Swift</title>
     </head>
     <body style="background-image: url('<?php echo getFiles("images"); ?>'); background-repeat: no-repeat; background-size: cover">
+	<div>
+		<input type="range" id="inputvolume" onchange="setVolume()" min="0" max="10">
+	</div>
         <audio autoplay="">
             <source src="<?php echo getFiles("songs"); ?>">
         </audio>
+	<script>
+		function setVolume() {
+			var valueinput = document.getElementById("inputvolume").value;
+			valueinput = (valueinput/10);
+			document.getElementById("audioelement").volume = valueinput;
+		}
+	</script>
     </body>
 </html>
