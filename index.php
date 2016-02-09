@@ -18,7 +18,7 @@ function getFiles($dir) {
 	<div>
 		<input type="range" id="inputvolume" onchange="setVolume()" min="0" max="10">
 	</div>
-        <audio autoplay="">
+        <audio autoplay="" id="audioelement">
             <source src="<?php echo getFiles("songs"); ?>">
         </audio>
 	<script>
